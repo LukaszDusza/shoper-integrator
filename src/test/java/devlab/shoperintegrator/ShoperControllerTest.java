@@ -1,6 +1,7 @@
 package devlab.shoperintegrator;
 
 
+import devlab.shoperintegrator.server.Categories;
 import devlab.shoperintegrator.server.ShoperController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,11 @@ class ShoperControllerTest {
     void getTokenFromSystemPropertyShouldReturnNotBlankString() {
         getAuthTokenModel();
         assertThat(System.getProperty("token")).isNotBlank();
+    }
+
+    @Test
+    void getCategoriesShouldBeNotNull() {
+        Categories categories = shoperController.getCategories();
+        System.out.println(categories);
     }
 }

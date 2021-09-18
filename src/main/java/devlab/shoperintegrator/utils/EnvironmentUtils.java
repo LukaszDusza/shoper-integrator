@@ -25,4 +25,10 @@ public class EnvironmentUtils {
         System.setProperty(key, value);
         logger.info("Setting property: {}={}", key, value);
     }
+
+    public static String getProperty(String key) {
+        String value = System.getProperty(key);
+        logger.info("getting property: {}={}", key, value);
+        return value;
+    }
 }

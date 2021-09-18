@@ -20,4 +20,9 @@ public class ShoperController {
         return shoperService.getAuthToken().getAccessToken();
     }
 
+    @GetMapping("/categories")
+    public Categories getCategories() {
+        return shoperService.getCategories();
+    }
+
 }
