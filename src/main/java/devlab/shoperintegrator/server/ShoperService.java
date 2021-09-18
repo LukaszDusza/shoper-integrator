@@ -18,8 +18,8 @@ public class ShoperService {
     }
 
     AuthTokenModel getAuthToken() {
-        var login = EnvironmentUtils.getProperty("login");
-        var password = EnvironmentUtils.getProperty("password");
+        var login = EnvironmentUtils.getEnv("login");
+        var password = EnvironmentUtils.getEnv("password");
         var url = "https://loftstore.pl/webapi/rest/auth";
         var responseBody = httpWrapper.getAuthToken(url, login, password);
         if (responseBody == null) {
@@ -28,13 +28,16 @@ public class ShoperService {
         }
         logger.info("received responseBody {}", responseBody);
         var objectMapper = new ObjectMapper();
-        AuthTokenModel authToken = null;
+        AuthTokenModel authToken;
         try {
             authToken = objectMapper.readValue(responseBody, AuthTokenModel.class);
             logger.info("authTokenModel: {}", authToken);
         } catch (JsonProcessingException e) {
+            logger.error("Cannot parse authTokenModel: {}", e.getMessage());
             e.printStackTrace();
+            return null;
         }
+        EnvironmentUtils.setProperty("token", authToken.getAccessToken());
         return authToken;
     }
 }
