@@ -1,11 +1,12 @@
 package devlab.shoperintegrator.model.products;
 
+import com.google.gson.Gson;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class Product{
+public class Product {
     private String product_id;
     private String producer_id;
     private Object group_id;
@@ -43,4 +44,8 @@ public class Product{
     private boolean is_product_of_day;
     private List<Object> feeds_excludes;
     private List<Object> tags;
+
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }
