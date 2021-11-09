@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.server;
+package devlab.shoperintegrator.shoper.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

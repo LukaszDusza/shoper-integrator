@@ -1,8 +1,9 @@
-package devlab.shoperintegrator.utils;
+package devlab.shoperintegrator.shoper.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import devlab.shoperintegrator.server.Token;
+import devlab.shoperintegrator.utils.EnvironmentUtils;
+import devlab.shoperintegrator.utils.LoggingInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;

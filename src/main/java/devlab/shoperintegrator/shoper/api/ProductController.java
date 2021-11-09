@@ -1,8 +1,8 @@
-package devlab.shoperintegrator.server;
+package devlab.shoperintegrator.shoper.api;
 
 
-import devlab.shoperintegrator.model.products.Product;
-import devlab.shoperintegrator.model.products.Products;
+import devlab.shoperintegrator.shoper.models.products.Product;
+import devlab.shoperintegrator.shoper.models.products.Products;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.model.products;
+package devlab.shoperintegrator.shoper.models.products;
 
 import com.google.gson.Gson;
 import lombok.Data;

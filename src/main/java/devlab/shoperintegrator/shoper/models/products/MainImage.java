@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.model.products;
+package devlab.shoperintegrator.shoper.models.products;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
