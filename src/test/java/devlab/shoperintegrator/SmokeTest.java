@@ -1,6 +1,6 @@
 package devlab.shoperintegrator;
 
-import devlab.shoperintegrator.server.ProductController;
+import devlab.shoperintegrator.shoper.api.ProductController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
