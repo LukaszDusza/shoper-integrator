@@ -1,12 +1,11 @@
-package devlab.shoperintegrator.server;
+package devlab.shoperintegrator.shoper.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import devlab.shoperintegrator.model.products.Product;
-import devlab.shoperintegrator.model.products.Products;
+import devlab.shoperintegrator.shoper.models.products.Product;
+import devlab.shoperintegrator.shoper.models.products.Products;
 import devlab.shoperintegrator.utils.EnvironmentUtils;
-import devlab.shoperintegrator.utils.HttpWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -27,7 +26,7 @@ public class ProductService {
         this.objectMapper = new ObjectMapper();
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         this.headers = new HttpHeaders();
-        setAuthorizationHeader();
+//        setAuthorizationHeader();
     }
 
     Products getProducts(String filterCriteria) {
