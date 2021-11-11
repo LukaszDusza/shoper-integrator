@@ -17,7 +17,7 @@ public class BBTBServiceTest {
 
     @Test
     public void should_create_csv_file() throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
-        bbtbService.generateCSVFile(); //templates/{file}
+        bbtbService.generateCSV();
     }
 
 }

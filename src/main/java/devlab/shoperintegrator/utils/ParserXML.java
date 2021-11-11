@@ -1,23 +1,22 @@
-package devlab.shoperintegrator.bbtb;
+package devlab.shoperintegrator.utils;
 
-import devlab.shoperintegrator.bbtb.BBTBMapper;
+import org.xml.sax.HandlerBase;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
 import java.io.IOException;
 
-public class BBTBParserXML {
+public class ParserXML {
 
-    public static BBTBMapper handler;
+    private ParserXML() {
+    }
 
-    private BBTBParserXML() { }
-
-    public static void parseFile(String pathToFile) {
+    public static void parseFile(String pathToFile, Object object) {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
@@ -26,8 +25,7 @@ public class BBTBParserXML {
         }
         try {
             SAXParser saxParser = factory.newSAXParser();
-            handler = new BBTBMapper();
-            saxParser.parse(pathToFile, handler);
+            saxParser.parse(pathToFile, (DefaultHandler) object);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
