@@ -24,6 +24,9 @@ public class BBTBService {
     @Value("${bbtb.download.path}")
     private String fileURL;
 
+    @Value("${bbtb.out.path}")
+    private String out;
+
     private String downloadAndSaveFile() throws IOException {
         String fileName = System.currentTimeMillis() + ".xml";
         File file = new File(fileName);
@@ -45,7 +48,7 @@ public class BBTBService {
         }
         String fileName = "bbtb_" + System.currentTimeMillis() + ".csv";
         if (StringUtils.isBlank(outPath)) {
-            outPath = "/Users/lukasz/projects/shoper-integrator/src/main/resources/templates/" + fileName;
+            outPath = out + fileName;
         } else {
             outPath = outPath + fileName;
         }
