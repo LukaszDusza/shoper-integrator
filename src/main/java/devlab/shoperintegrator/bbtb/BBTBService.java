@@ -20,9 +20,10 @@ import java.util.List;
 @Service
 public class BBTBService {
     Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @Value("${bbtb.download.path}")
     private String fileURL;
+    @Value("${bbtb.out.path}")
+    private String outPath;
 
     private String downloadAndSaveFile() throws IOException {
         String fileName = System.currentTimeMillis() + ".xml";
@@ -45,7 +46,7 @@ public class BBTBService {
         }
         String fileName = "bbtb_" + System.currentTimeMillis() + ".csv";
         if (StringUtils.isBlank(outPath)) {
-            outPath = "/Users/lukasz/projects/shoper-integrator/src/main/resources/templates/" + fileName;
+            outPath = this.outPath + fileName;
         } else {
             outPath = outPath + fileName;
         }
