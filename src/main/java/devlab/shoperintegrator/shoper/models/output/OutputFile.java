@@ -80,15 +80,74 @@ public class OutputFile {
     @CsvBindByPosition(position = 17)
     private String images5;
 
+    @CsvBindByName(column = "images 6")
     @CsvBindByPosition(position = 18)
+    private String images6;
+
+    @CsvBindByName(column = "images 7")
+    @CsvBindByPosition(position = 19)
+    private String images7;
+
+    @CsvBindByName(column = "images 8")
+    @CsvBindByPosition(position = 20)
+    private String images8;
+
+    @CsvBindByName(column = "images 9")
+    @CsvBindByPosition(position = 21)
+    private String images9;
+    @CsvBindByName(column = "images 10")
+    @CsvBindByPosition(position = 22)
+    private String images10;
+
+    @CsvBindByName(column = "images 11")
+    @CsvBindByPosition(position = 23)
+    private String images11;
+
+    @CsvBindByName(column = "images 12")
+    @CsvBindByPosition(position = 24)
+    private String images12;
+
+    @CsvBindByName(column = "images 13")
+    @CsvBindByPosition(position = 25)
+    private String images13;
+
+    @CsvBindByName(column = "images 14")
+    @CsvBindByPosition(position = 26)
+    private String images14;
+
+    @CsvBindByName(column = "images 15")
+    @CsvBindByPosition(position = 27)
+    private String images15;
+
+    @CsvBindByName(column = "images 16")
+    @CsvBindByPosition(position = 28)
+    private String images16;
+
+    @CsvBindByName(column = "images 17")
+    @CsvBindByPosition(position = 29)
+    private String images17;
+
+    @CsvBindByName(column = "images 18")
+    @CsvBindByPosition(position = 30)
+    private String images18;
+
+    @CsvBindByName(column = "images 19")
+    @CsvBindByPosition(position = 31)
+    private String images19;
+
+    @CsvBindByName(column = "images 20")
+    @CsvBindByPosition(position = 32)
+    private String images20;
+
+    @CsvBindByPosition(position = 33)
     @CsvBindByName(column = "weight")
     private String weight;
 
     @CsvBindByName(column = "producer_code")
-    @CsvBindByPosition(position = 19)
+    @CsvBindByPosition(position = 34)
     private String producerCode;
 
-    @CsvBindByPosition(position = 20)
+    @CsvBindByPosition(position = 35)
     @CsvBindByName(column = "vendor_url")
     private String vendorURL;
 
@@ -258,6 +317,126 @@ public class OutputFile {
 
     public void setVendorURL(String vendorURL) {
         this.vendorURL = StringUtils.normalizeSpace(vendorURL);
+    }
+
+    public String getImages6() {
+        return images6;
+    }
+
+    public void setImages6(String images6) {
+        this.images6 = images6;
+    }
+
+    public String getImages7() {
+        return images7;
+    }
+
+    public void setImages7(String images7) {
+        this.images7 = images7;
+    }
+
+    public String getImages8() {
+        return images8;
+    }
+
+    public void setImages8(String images8) {
+        this.images8 = images8;
+    }
+
+    public String getImages9() {
+        return images9;
+    }
+
+    public void setImages9(String images9) {
+        this.images9 = images9;
+    }
+
+    public String getImages10() {
+        return images10;
+    }
+
+    public void setImages10(String images10) {
+        this.images10 = images10;
+    }
+
+    public String getImages11() {
+        return images11;
+    }
+
+    public void setImages11(String images11) {
+        this.images11 = images11;
+    }
+
+    public String getImages12() {
+        return images12;
+    }
+
+    public void setImages12(String images12) {
+        this.images12 = images12;
+    }
+
+    public String getImages13() {
+        return images13;
+    }
+
+    public void setImages13(String images13) {
+        this.images13 = images13;
+    }
+
+    public String getImages14() {
+        return images14;
+    }
+
+    public void setImages14(String images14) {
+        this.images14 = images14;
+    }
+
+    public String getImages15() {
+        return images15;
+    }
+
+    public void setImages15(String images15) {
+        this.images15 = images15;
+    }
+
+    public String getImages16() {
+        return images16;
+    }
+
+    public void setImages16(String images16) {
+        this.images16 = images16;
+    }
+
+    public String getImages17() {
+        return images17;
+    }
+
+    public void setImages17(String images17) {
+        this.images17 = images17;
+    }
+
+    public String getImages18() {
+        return images18;
+    }
+
+    public void setImages18(String images18) {
+        this.images18 = images18;
+    }
+
+    public String getImages19() {
+        return images19;
+    }
+
+    public void setImages19(String images19) {
+        this.images19 = images19;
+    }
+
+    public String getImages20() {
+        return images20;
+    }
+
+    public void setImages20(String images20) {
+        this.images20 = images20;
     }
 
     @Override

@@ -47,7 +47,7 @@ public class B2BTravelMapper extends DefaultHandler {
             String s = currentValue.toString();
             currentObject.setBarcode(s);
         }
-        if (qName.equalsIgnoreCase("ItemSymbol")) {
+        if (qName.equalsIgnoreCase("ItemCode")) {
             String s = currentValue.toString();
             currentObject.setProductCode(s);
         }
@@ -96,6 +96,21 @@ public class B2BTravelMapper extends DefaultHandler {
             if(imgCounter == 3) currentObject.setImages3(s);
             if(imgCounter == 4) currentObject.setImages4(s);
             if(imgCounter == 5) currentObject.setImages5(s);
+            if(imgCounter == 6) currentObject.setImages6(s);
+            if(imgCounter == 7) currentObject.setImages7(s);
+            if(imgCounter == 8) currentObject.setImages8(s);
+            if(imgCounter == 9) currentObject.setImages9(s);
+            if(imgCounter == 10) currentObject.setImages10(s);
+            if(imgCounter == 11) currentObject.setImages11(s);
+            if(imgCounter == 12) currentObject.setImages12(s);
+            if(imgCounter == 13) currentObject.setImages13(s);
+            if(imgCounter == 14) currentObject.setImages14(s);
+            if(imgCounter == 15) currentObject.setImages15(s);
+            if(imgCounter == 16) currentObject.setImages16(s);
+            if(imgCounter == 17) currentObject.setImages17(s);
+            if(imgCounter == 18) currentObject.setImages18(s);
+            if(imgCounter == 19) currentObject.setImages19(s);
+            if(imgCounter == 20) currentObject.setImages20(s);
         }
         if (qName.equalsIgnoreCase("Product")) {
             currentObject.setUnit("szt.");
