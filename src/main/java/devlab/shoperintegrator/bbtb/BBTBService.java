@@ -46,6 +46,6 @@ public class BBTBService implements CSVFacade {
         String fileName = "bbtb_" + System.currentTimeMillis() + ".csv";
         List<OutputFile> series = mapper.getObjects();
         CSVBuilder<OutputFile> builder = new CSVBuilder<>();
-        builder.writeCsv(outPath + fileName, series, OutputFile.class, (char) 59);
+        builder.writeCsv(outPath + fileName, series, OutputFile.class, (char) 59); // separator ;
     }
 }

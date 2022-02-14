@@ -75,8 +75,9 @@ public class B2BTravelMapper extends DefaultHandler {
             String s = currentValue.toString();
             currentObject.setVat(s);
         }
-        if (qName.equalsIgnoreCase("Net")) {
-            String s = currentValue.toString();
+        if (qName.equalsIgnoreCase("Gross")) {
+            String s = currentValue.toString().replace((char)46, (char)44); // . replace to ,
+
             currentObject.setPrice(s);
         }
         if (qName.equalsIgnoreCase("Quantity")) {

@@ -46,6 +46,6 @@ public class B2BTravelService implements CSVFacade {
         String fileName = "b2b_travel_" + System.currentTimeMillis() + ".csv";
         List<OutputFile> series = mapper.getObjects();
         CSVBuilder<OutputFile> builder = new CSVBuilder<>();
-        builder.writeCsv(outPath + fileName, series, OutputFile.class, (char) 59);
+        builder.writeCsv(outPath + fileName, series, OutputFile.class, (char) 59); // separator ;
     }
 }
