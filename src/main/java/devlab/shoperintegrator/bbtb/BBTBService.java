@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,7 +31,7 @@ public class BBTBService implements CSVFacade {
 
     @Override
     public String downloadFile(String fileURL, String outPath) throws IOException {
-        String fileName = "bbtb_" + System.currentTimeMillis() + ".xml";
+        String fileName = "bbtb_" + getReadableDate() + ".xml";
         File file = new File(outPath + fileName);
         FileUtils.copyURLToFile(new URL(fileURL), file);
         return file.getAbsolutePath();
@@ -47,5 +49,12 @@ public class BBTBService implements CSVFacade {
         List<OutputFile> series = mapper.getObjects();
         CSVBuilder<OutputFile> builder = new CSVBuilder<>();
         builder.writeCsv(outPath + fileName, series, OutputFile.class, (char) 59); // separator ;
+    }
+
+    public String getReadableDate() {
+        long stamp = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd__HH_mm_ss");
+        Date date = new Date(stamp);
+        return sdf.format(date);
     }
 }
