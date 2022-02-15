@@ -5,6 +5,7 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import devlab.shoperintegrator.b2bTravel.B2BTravelMapper;
 import devlab.shoperintegrator.b2bTravel.B2BTravelService;
 import devlab.shoperintegrator.bbtb.BBTBService;
+import devlab.shoperintegrator.utils.csv.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class OutputFileServiceTest {
     //bbtb
     @Test
     public void should_download_BBTB_XML_file() throws IOException {
-        b2BTravelService.downloadFile("https://bbtb.pl/modules/pricewars2/service.php?id_xml=1", "src/main/resources/templates/");
+        FileUtils.downloadFile("https://bbtb.pl/modules/pricewars2/service.php?id_xml=1", "src/main/resources/templates/", "bbtb_");
     }
 
     @Test
@@ -41,7 +42,7 @@ public class OutputFileServiceTest {
     //b2b_travel
     @Test
     public void should_download_B2B_Travel_XML_file() throws IOException {
-        b2BTravelService.downloadFile("https://whs.babyandtravel.pl/wm_state_bat_cst_b2b.xml", "src/main/resources/templates/");
+        FileUtils.downloadFile("https://whs.babyandtravel.pl/wm_state_bat_cst_b2b.xml", "src/main/resources/templates/", "travel_");
     }
 
     @Test

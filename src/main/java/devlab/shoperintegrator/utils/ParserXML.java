@@ -1,6 +1,5 @@
 package devlab.shoperintegrator.utils;
 
-import org.xml.sax.HandlerBase;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;

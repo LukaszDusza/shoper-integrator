@@ -13,7 +13,7 @@ import java.util.List;
 
 @Component
 public class BBTBMapper extends DefaultHandler {
-    Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private StringBuilder currentValue;
     private List<OutputFile> objects = new ArrayList<>();
     private OutputFile currentObject;

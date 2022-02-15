@@ -19,14 +19,14 @@ public class ProductService {
     private final HttpWrapper<Product> httpWrapper;
     private final ObjectMapper objectMapper;
     private final HttpHeaders headers;
-    private static final String API_PRODUCTS = "https://loftstore.pl/webapi/rest/products/";
+    private static final String API_PRODUCTS = "https://malinakids.pl/webapi/rest/products/";
 
     public ProductService(HttpWrapper<Product> httpWrapper) {
         this.httpWrapper = httpWrapper;
         this.objectMapper = new ObjectMapper();
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         this.headers = new HttpHeaders();
-//        setAuthorizationHeader();
+        setAuthorizationHeader();
     }
 
     Products getProducts(String filterCriteria) {
