@@ -1,8 +1,9 @@
 package devlab.shoperintegrator.bbtb;
 
+import devlab.shoperintegrator.shoper.models.output.OutputFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -10,12 +11,12 @@ import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BBTBMapper extends DefaultHandler {
     Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-    @Value("${csv.write.file.path}")
     private StringBuilder currentValue;
-    private List<BBTB> objects = new ArrayList<>();
-    private BBTB currentObject;
+    private List<OutputFile> objects = new ArrayList<>();
+    private OutputFile currentObject;
     private String currentAttr;
 
     public BBTBMapper() {
@@ -31,7 +32,7 @@ public class BBTBMapper extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         currentValue.setLength(0);
         if (qName.equalsIgnoreCase("o")) {
-            currentObject = new BBTB();
+            currentObject = new OutputFile();
             String productCode = attributes.getValue("id");
             currentObject.setProductCode(productCode);
             String url = attributes.getValue("url");
@@ -103,7 +104,7 @@ public class BBTBMapper extends DefaultHandler {
     @Override
     public void endDocument() { /* document why this method is empty */ }
 
-    public List<BBTB> getObjects() {
+    public List<OutputFile> getObjects() {
         return objects;
     }
 }
