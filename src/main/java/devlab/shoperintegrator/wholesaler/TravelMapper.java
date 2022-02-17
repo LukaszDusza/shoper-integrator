@@ -1,6 +1,7 @@
-package devlab.shoperintegrator.b2bTravel;
+package devlab.shoperintegrator.wholesaler;
 
-import devlab.shoperintegrator.shoper.models.output.OutputFile;
+import devlab.shoperintegrator.csv.OutputFile;
+import devlab.shoperintegrator.csv.MapperFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class B2BTravelMapper extends DefaultHandler {
+public class TravelMapper extends DefaultHandler implements MapperFacade {
     public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private StringBuilder currentValue;
     private List<OutputFile> objects = new ArrayList<>();
     private OutputFile currentObject;
     private int imgCounter;
 
-    public B2BTravelMapper() {
+    public TravelMapper() {
     }
 
     @Override
@@ -129,6 +130,7 @@ public class B2BTravelMapper extends DefaultHandler {
     @Override
     public void endDocument() { /* document why this method is empty */ }
 
+    @Override
     public List<OutputFile> getObjects() {
         return objects;
     }

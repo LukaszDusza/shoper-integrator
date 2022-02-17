@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.shoper.models.output;
+package devlab.shoperintegrator.csv;
 
 
 import com.opencsv.bean.CsvBindByName;

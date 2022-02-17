@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.utils.csv;
+package devlab.shoperintegrator.csv;
 
 import com.opencsv.bean.BeanField;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
@@ -6,7 +6,7 @@ import com.opencsv.bean.CsvBindByName;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import org.apache.commons.lang3.StringUtils;
 
-public class CustomMappingStrategy<T> extends ColumnPositionMappingStrategy<T> {
+public class MappingStrategyCSV<T> extends ColumnPositionMappingStrategy<T> {
     @Override
     public String[] generateHeader(T bean) throws CsvRequiredFieldEmptyException {
         final int numColumns = getFieldMap().values().size();

@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.utils.csv;
+package devlab.shoperintegrator.csv;
 
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-public class CSVBuilder<T> {
+public class BuilderCSV<T> {
     public void writeCsv(String stringPath, List<T> series, Class<T> clazz, char separator) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
-        CustomMappingStrategy<T> mappingStrategy = new CustomMappingStrategy<>();
+        MappingStrategyCSV<T> mappingStrategy = new MappingStrategyCSV<>();
         mappingStrategy.setType(clazz);
         Writer writer = new FileWriter(stringPath);
         StatefulBeanToCsv<T> sbc = new StatefulBeanToCsvBuilder<T>(writer)

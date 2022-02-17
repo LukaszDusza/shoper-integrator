@@ -1,6 +1,7 @@
-package devlab.shoperintegrator.bbtb;
+package devlab.shoperintegrator.wholesaler;
 
-import devlab.shoperintegrator.shoper.models.output.OutputFile;
+import devlab.shoperintegrator.csv.MapperFacade;
+import devlab.shoperintegrator.csv.OutputFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class BBTBMapper extends DefaultHandler {
+public class BBTBMapper extends DefaultHandler implements MapperFacade {
     public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private StringBuilder currentValue;
     private List<OutputFile> objects = new ArrayList<>();
@@ -104,6 +105,7 @@ public class BBTBMapper extends DefaultHandler {
     @Override
     public void endDocument() { /* document why this method is empty */ }
 
+    @Override
     public List<OutputFile> getObjects() {
         return objects;
     }

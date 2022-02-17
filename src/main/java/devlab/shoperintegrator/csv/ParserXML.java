@@ -1,4 +1,4 @@
-package devlab.shoperintegrator.utils;
+package devlab.shoperintegrator.csv;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;

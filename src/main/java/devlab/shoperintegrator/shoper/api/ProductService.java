@@ -26,7 +26,7 @@ public class ProductService {
         this.objectMapper = new ObjectMapper();
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         this.headers = new HttpHeaders();
-        setAuthorizationHeader();
+    //    setAuthorizationHeader();
     }
 
     Products getProducts(String filterCriteria) {
