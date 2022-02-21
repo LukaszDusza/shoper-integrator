@@ -98,7 +98,8 @@ public class HttpWrapper<T> {
     public String getAccessToken() {
         var login = EnvironmentUtils.getEnv("login");
         var password = EnvironmentUtils.getEnv("password");
-        var url = "https://loftstore.pl/webapi/rest/auth";
+        var webapi = EnvironmentUtils.getEnv("webapi");
+        var url = webapi + "/auth";
         var responseBody = getAccessToken(url, login, password);
         if (responseBody == null) {
             logger.error("responseBody is null for url {}", url);
